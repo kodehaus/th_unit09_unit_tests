@@ -1,0 +1,35 @@
+{
+  "name": "th_unit09_unit_tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kodehaus/th_unit09_unit_tests.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kodehaus/th_unit09_unit_tests/issues"
+  },
+  "homepage": "https://github.com/kodehaus/th_unit09_unit_tests#readme",
+  "devDependencies": {
+    "axios": "^0.21.1",
+    "chai": "^4.3.4",
+    "mocha": "^8.3.2"
+  },
+  "semistandard": {
+    "env": [
+      "mocha",
+      "chai",
+      "axios"
+    ]
+  },
+  "dependencies": {
+    "semistandard": "^16.0.0"
+  }
+}
