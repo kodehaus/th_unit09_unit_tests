@@ -1,26 +1,8 @@
-var Mocha = require('mocha'),
-    fs = require('fs'),
-    path = require('path');
-    
-exports.executeMeetsTest = () => {
-    // Instantiate a Mocha instance.
-    var mocha = new Mocha();
+const path = require('path');
 
-    var testDir = __dirname + '/test/'
-
-    // Add each .js file to the mocha instance
-    fs.readdirSync(testDir).filter(function(file) {
-        // Only keep the .js files
-        return file.substr(-3) === '.js';
-
-    }).forEach(function(file) {
-        mocha.addFile(
-            path.join(testDir, file)
-        );
-    });
-
-    // Run the tests.
-    mocha.run(function(failures) {
-    process.exitCode = failures ? 1 : 0;  // exit with non-zero status if there were failures
-    });
+module.exports = {
+    meets: path.join(path.join(__dirname), '/test/meets.tests.js'),
+    exceeds: path.join(path.join(__dirname), '/test/exceeds.tests.js'),
+    meetsRun: require(path.join(path.join(__dirname), '/test/meets.tests.js')),
+    exceedsRun: require(path.join(path.join(__dirname), '/test/exceeds.tests.js'))
 }
