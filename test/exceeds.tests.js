@@ -64,7 +64,6 @@ describe('meets expectations', function () {
     });
 
 
-    // end of validate instructions 01
   });
   // end of meets 
 });
