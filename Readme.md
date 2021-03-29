@@ -17,10 +17,11 @@ npm install
 ```
 
 2. **Add the test project to the global package directory as a symbolic link**
-While using the terminal in the project's root directory, type the following commad:
+While using the terminal in the project's root directory, type the following command:
  ```javascript
 npm link
 ```
+
 
 In the future, when you have completed your work with the test suite, you can uninstall it using the following command:
  ```javascript
