@@ -17,19 +17,25 @@ npm install
 ```
 
 2. **Add the test project to the global package directory as a symbolic link**
- The name of this project is defined as the name property in the package.json file. The name of this project is "th_unit09_unit_tests". While using the terminal in the project's root directory, type the following commad:
+While using the terminal in the project's root directory, type the following commad:
  ```javascript
 npm link
 ```
 
+In the future, when you have completed your work with the test suite, you can uninstall it using the following command:
+ ```javascript
+npm uninstall th_unit09_unit_tests
+```
 
 
-2. **Install the test code as a dependency in your unit 8 project**
-You will need to ensure that you use Powershell for the next steps. 
-In your Unit 08 project run: npm install --save-dev [dir to unit 8 test project ie: npm install C:\Users\krobin13\Desktop\SourceCode\th_unit_08_test_suite\]
-*Using a dev dependency should ensure anyone downloading your code can execute your project without this test code. Confirm this*
+3. **Add the new global test project to your working project's node_modules folder**
+The test project's package.json defines the name of our test package as: th_unit09_unit_tests".
+Let's add this project by issuing the following npm command:
+```javascript
+npm link th_unit09_unit_tests
+```
+This will simply add a symbolic link for the test package into your node_modules folder without adding it to your project.jsonn file. 
 
-3. **Add the test folder to store a script to execute our tests to your unit 8 project** Add a folder to the root of your project with the name test .
 
 4. **Add the js file in the unit 8 project that we will use to invoke execution of the tests in our imported package** Add a js file into the test folder that will manually execute the Mocha tests. You can use executeTest.js. You will need to use this name in step 6.
 
