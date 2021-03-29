@@ -37,18 +37,20 @@ npm link th_unit09_unit_tests
 This will simply add a symbolic link for the test package into your node_modules folder without adding it to your project.jsonn file. 
 
 
-4. **Add the js file in the unit 8 project that we will use to invoke execution of the tests in our imported package** Add a js file into the test folder that will manually execute the Mocha tests. You can use executeTest.js. You will need to use this name in step 6.
+4. **Add the js file in the unit 9 project that we will use to invoke execution of the tests in our imported package** Add a js file into the test folder that will manually execute the Mocha tests. You can use executeTest.js. You will need to use this name in step 6.
 
-5. **Add the code into our js file in project 8 that will invoke the tests stored in our package** Add the following information into the file added into the test folder
+5. **Add the code into our js file in project 9 that will invoke the tests stored in our package** Add the following information into the file added into the test folder
 ```javascript
-const test = require('th_unit08_test_suite');
-var path = require('path');
+const test = require('th_unit09_unit_tests');
+const Mocha = require('mocha');
 
-// we define a global app root variable so we can determine the root of the application
-global.appRoot = path.resolve(__dirname + "\\..\\");
+const mocha = new Mocha();
 
-// we manually execute the tests in the included package
-test.executeMeetsTest();
+mocha.addFile(test.meets);
+mocha.addFile(test.exceeds);
+
+mocha.run();
+
 ```
 
 6. **Set up node to manually execute our tests when you run the npm test command in your unit 8 project** Finally, let node know that when you execute the npm test command to manually execute the code we've written in this project. Do this by adding/altering the package.json file so that the test script runs the file we created in step 5. Ensure the following property is in the scripts object in the package.json file.
@@ -57,13 +59,8 @@ test.executeMeetsTest();
 "test": "node test/executeTest.js"
 ```
 7. **Execute the tests** You should now be able to execute the suite of tests using npm test
-The route /books/error/500 was created in the routes/books.js /or whereever you define the book route so that we could test for a 500 error
-```javascript
-router.get('/error/500', asyncHandler((req, res) => {
-  const internalServerError = new Error('500 Internal Server Error');
-  throw (internalServerError);
-}));
-```
+
+
 
 
 
